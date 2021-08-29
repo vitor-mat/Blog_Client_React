@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Container, Header } from "./style";
+import { Container, Header, Main } from "./style";
+
+import { Card } from "../../components/card/index";
 
 export const Home = () => {
     return(
@@ -11,6 +13,9 @@ export const Home = () => {
                     <button id="btn-dashboard">Dashboard</button>
                 </div>
             </Header>
+            <Main>
+
+            </Main>
         </Container>
     )
 }

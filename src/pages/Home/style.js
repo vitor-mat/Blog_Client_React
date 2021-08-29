@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
+
+    overflow-y: auto;
 `
 
 export const Header = styled.header`
@@ -52,10 +54,13 @@ export const Header = styled.header`
 
 export const Main = styled.main`
     width: 100%;
-    height: 85vh;
+    min-height: 85vh;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     gap: 10px;
-    padding: 10px;
+    padding: 20px 10px 10px 20px;
+
+    overflow-y: auto;
 `
