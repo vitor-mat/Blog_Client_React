@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { GlobalStyle } from "./style/GlobalStyle";
 
-import { Home } from "./pages/Home/Home";
+import { Home } from "./pages/Home/index";
+import { Posts } from "./pages/Posts/index";
 
 function App() {
   return (
@@ -12,8 +13,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/home">
+        <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/posts">
+          <Posts />
         </Route>
       </Switch>
     </Router>
