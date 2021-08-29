@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Container, Header, Main } from "./style";
 
+import { Post } from "../../components/post/index";
+
 export const Posts = () => {
     return(
         <Container>
@@ -12,7 +14,7 @@ export const Posts = () => {
                 </div>
             </Header>
             <Main>
-
+                <Post />
             </Main>
         </Container>
     )
