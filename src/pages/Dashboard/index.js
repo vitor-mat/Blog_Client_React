@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { Container, Header, Main, Aside } from "./style";
 
-export const Dashboard = () => {
+export const Dashboard = ({children}) => {
     return(
         <Container>
             <Header>
@@ -11,16 +13,17 @@ export const Dashboard = () => {
                     <button id="btn-dashboard">Get out</button>
                 </div>
             </Header>
+            <Aside>
+                <nav>
+                    <ul>
+                        <li><Link to="/dashboard/cadastrar">Cadastrar</Link></li>
+                        <li><Link to="/dashboard/posts">Meus Posts</Link></li>
+                        <li><Link to="/dashboard/status">Status</Link></li>
+                    </ul>
+                </nav>
+            </Aside>
             <Main>
-                <Aside>
-                    <nav>
-                        <ul>
-                            <li>Cadastrar</li>
-                            <li>Meus Posts</li>
-                            <li>Status</li>
-                        </ul>
-                    </nav>
-                </Aside>
+                {children}
             </Main>
         </Container>
     )

@@ -5,11 +5,19 @@ export const Container = styled.div`
     height: 100vh;
 
     overflow-y: auto;
+
+    display: grid;
+    grid-template-areas:"header header"
+                        "aside main";
+    grid-template-columns: 180px  auto;
+    grid-template-rows: 10vh  90vh; 
 `
 
 export const Header = styled.header`
     width: 100%;
-    height: 10vh;
+    height: 100%;
+
+    grid-area: header;
 
     background: black;
 
@@ -60,7 +68,9 @@ export const Header = styled.header`
 
 export const Main = styled.main`
     width: 100%;
-    height: 90vh;
+    height: 100%;
+
+    grid-area: main;
 
     display: flex;
     gap: 10px;
@@ -69,8 +79,10 @@ export const Main = styled.main`
 `
 
 export const Aside = styled.aside`
-    min-width: 180px;
+    width: 100%;
     height: 100%;
+
+    grid-area: aside;
 
     background: rgba(0, 0, 0, 0.1);
 
@@ -91,18 +103,28 @@ export const Aside = styled.aside`
 
             padding-left: 20px;
 
-            font-weight: 700;
-            font-size: 25px;
             cursor: pointer;
+
+            a{
+                font-weight: 700;
+                font-size: 25px;
+                text-decoration: none;
+                color: black;
+            }
         }
 
         li:hover{
             background: rgba(0, 0, 0, .5);
-            color: #fff;
+
+            a{
+                color: #fff;
+            }
         }
 
         li:active{
-            color: lightblue;
+            a{
+                color: lightblue;
+            }
         }
     }
 `
