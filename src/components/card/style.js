@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 180px;
+    min-height: 210px;
 
     padding:15px;
 
@@ -11,6 +11,7 @@ export const Container = styled.div`
     gap: 10px;
 
     border-bottom: 1px solid black;
+
 
     h1{
         font-size: 48px;
@@ -26,5 +27,12 @@ export const Container = styled.div`
         word-wrap: break-word;
         font-size: 18px;
         font-weight: 300;
+    }
+
+    #btn-divs{
+        width: 100%;
+        height: 60px;
+
+        position: relative;
     }
 `

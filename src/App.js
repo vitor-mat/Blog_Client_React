@@ -11,6 +11,7 @@ import { Dashboard } from "./pages/Dashboard/index";
 
 //import dos componentes
 import { Cadastro } from "./components/Cadastro/index";
+import { PostsDashboard } from "./components/Posts_Dashboard/index";
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
         <Route path="/dashboard/cadastrar">
           <Dashboard>
             <Cadastro />
+          </Dashboard>
+        </Route>
+        <Route path="/dashboard/posts">
+          <Dashboard>
+            <PostsDashboard />
           </Dashboard>
         </Route>
       </Switch>
