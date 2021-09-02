@@ -16,9 +16,9 @@ export const Dashboard = ({children}) => {
             <Aside>
                 <nav>
                     <ul>
+                        <li><Link to="/dashboard/status">Status</Link></li>
                         <li><Link to="/dashboard/cadastrar">Cadastrar</Link></li>
                         <li><Link to="/dashboard/posts">Meus Posts</Link></li>
-                        <li><Link to="/dashboard/status">Status</Link></li>
                     </ul>
                 </nav>
             </Aside>

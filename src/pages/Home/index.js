@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Header, Main } from "./style";
 
-import { Card } from "../../components/card/index";
+//import { Card } from "../../components/card/index";
 
 export const Home = () => {
     return(

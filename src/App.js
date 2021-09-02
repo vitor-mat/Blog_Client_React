@@ -12,6 +12,7 @@ import { Dashboard } from "./pages/Dashboard/index";
 //import dos componentes
 import { Cadastro } from "./components/Cadastro/index";
 import { PostsDashboard } from "./components/Posts_Dashboard/index";
+import { Status } from "./components/Status/index";
 
 function App() {
   return (
@@ -26,6 +27,16 @@ function App() {
         </Route>
         <Route path="/posts">
           <Posts />
+        </Route>
+        <Route exact path="/dashboard">
+          <Dashboard>
+            <Status />
+          </Dashboard>
+        </Route>
+        <Route path="/dashboard/status">
+          <Dashboard>
+            <Status />
+          </Dashboard>
         </Route>
         <Route path="/dashboard/cadastrar">
           <Dashboard>
