@@ -54,10 +54,16 @@ export const Header = styled.header`
             width: 150px;
             height; 60px;
             padding: 5px;
-            font-weight: 600;
-            font-size: 18px;
+
             border-radius: 10px;
             cursor: pointer;
+
+            a{
+                color: black;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 18px;
+            }
         }
 
         #btn-dashboard:active{

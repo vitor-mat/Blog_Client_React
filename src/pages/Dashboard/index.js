@@ -10,7 +10,7 @@ export const Dashboard = ({children}) => {
             <Header>
                 <h1>Blog App <span>dashboard</span></h1>
                 <div id="btn-dashboard-div">
-                    <button id="btn-dashboard">Get out</button>
+                    <button id="btn-dashboard"><Link to="/">Get out</Link></button>
                 </div>
             </Header>
             <Aside>
