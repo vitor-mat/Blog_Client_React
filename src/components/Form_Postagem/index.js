@@ -2,11 +2,11 @@ import React from "react";
 
 import { Container } from "./style";
 
-export const Cadastro = (props) => {
+export const Form = (props) => {
     return(
         <Container>
             <div id="title-form-cadastrar-div">
-                <h2>Cadastre suas Postagens</h2>
+                <h2>{props.purpose} Post</h2>
             </div>
             <form>
                 <div id="title-input-div">
@@ -24,7 +24,7 @@ export const Cadastro = (props) => {
                 <div id="btn-cadastrar-div">
                     <button onClick={(e) => {
                         e.preventDefault();
-                    }}>Cadastrar</button>
+                    }}>{props.purpose}</button>
                 </div>
             </form>            
         </Container>
