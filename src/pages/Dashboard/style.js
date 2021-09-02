@@ -27,14 +27,18 @@ export const Header = styled.header`
 
     position: relative;
 
-    h1{
-        color: #fff;
-        font-weight: bolder;
+    a{
+        text-decoration: none;
 
-        cursor: pointer;
-
-        span{
-            font-size: 16px;
+        h1{
+            color: #fff;
+            font-weight: bolder;
+    
+            cursor: pointer;
+    
+            span{
+                font-size: 16px;
+            }
         }
     }
 
