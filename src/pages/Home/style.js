@@ -46,10 +46,17 @@ export const Header = styled.header`
             width: 150px;
             height; 60px;
             padding: 5px;
-            font-weight: 600;
-            font-size: 18px;
             border-radius: 10px;
             cursor: pointer;
+
+            
+            a{
+                color: #000;
+                font-weight: 600;
+                font-size: 18px;
+                text-decoration: none;
+            }
+
         }
 
         #btn-dashboard:active{
