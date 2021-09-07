@@ -19,11 +19,15 @@ export const Header = styled.header`
 
     position: relative;
 
-    h1{
+    a{
         color: #fff;
-        font-weight: bolder;
+        text-decoration: none;
 
-        cursor: pointer;
+        h1{
+            font-weight: bolder;
+    
+            cursor: pointer;
+        }
     }
 
     #btn-dashboard-div{
