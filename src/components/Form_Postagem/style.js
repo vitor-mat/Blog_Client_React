@@ -57,7 +57,7 @@ export const Container = styled.div`
             span{
                 position: absolute;
 
-                right: 10px;
+                right: 30px;
                 bottom: 4px;
 
                 font-weight: 300;
@@ -93,7 +93,7 @@ export const Container = styled.div`
             span{
                 position: absolute;
 
-                right: 10px;
+                right: 30px;
                 bottom: 8px;
 
                 font-weight: 300;
@@ -110,6 +110,7 @@ export const Container = styled.div`
                 height: 300px;
     
                 padding: 5px;
+                padding-bottom: 24px;
     
                 font-size: 24px;
                 font-weight: 300;
@@ -119,6 +120,7 @@ export const Container = styled.div`
                 border-radius: 10px;
                 border: 1px solid rgba(0, 0, 0, .5);
 
+                overflow-y: auto;
             }
     
             textarea:focus{
@@ -129,7 +131,7 @@ export const Container = styled.div`
             span{
                 position: absolute;
 
-                right: 10px;
+                right: 30px;
                 bottom: 8px;
 
                 font-weight: 300;
