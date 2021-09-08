@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container } from "./style";
 
@@ -11,15 +11,21 @@ import { BtnEdit } from "../Btn_Edit";
 
 export const PostsDashboard = () => {
 
+    let [posts, setPosts] = useState([])
+
     api.get("/posts")
-        .then((response) => console.log(response.data))
+        .then((response) => setPosts(posts = response.data))
         .catch((err) => ("Infelizmente deu fail: "+err))
 
     return(
         <Container>
-            <Card edit={<BtnEdit />} delete={<BtnDelete />} title="O novo mundo" description="Um mundo de maiores desafios no mundo pirata" content="Luffy e seus amigos prtem para o novo mundo, aonde moram os yonkous, em busca da ultima ilha, aonde está o tesouro final do gol d roger."/>
-            <Card edit={<BtnEdit />} delete={<BtnDelete />} title="novo mundo" description="Um mundo de maiores desafios no mundo pirata" content="Luffy e seus amigos prtem para o novo mundo, aonde moram os yonkous, em busca da ultima ilha, aonde está o tesouro final do gol d roger."/>
-            <Card edit={<BtnEdit />} delete={<BtnDelete />} title="O novo " description="Um mundo de maiores desafios no mundo pirata" content="Luffy e seus amigos prtem para o novo mundo, aonde moram os yonkous, em busca da ultima ilha, aonde está o tesouro final do gol d roger."/>
+
+            {
+                posts.map((value) => {
+                    return <Card key={value.description} edit={<BtnEdit />} delete={<BtnDelete />} title={value.title} description={value.description} content={value.content}/>
+                })
+            }
+
         </Container>
     )
 }
