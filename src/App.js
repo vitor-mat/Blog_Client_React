@@ -10,7 +10,8 @@ import { Posts } from "./pages/Posts/index";
 import { Dashboard } from "./pages/Dashboard/index";
 
 //import dos componentes
-import { Form } from "./components/Form_Postagem/index";
+import { FormCadastrarPostagens } from "./components/Form_Cadastrar_Postagens/index";
+import { FormEditarPostagens } from "./components/Form_Editar_Postagens/index";
 import { PostsDashboard } from "./components/Posts_Dashboard/index";
 import { Status } from "./components/Status/index";
 
@@ -40,7 +41,7 @@ function App() {
         </Route>
         <Route path="/dashboard/cadastrar">
           <Dashboard>
-            <Form purpose="Cadastrar"/>
+            <FormCadastrarPostagens/>
           </Dashboard>
         </Route>
         <Route exact path="/dashboard/posts">
@@ -50,7 +51,7 @@ function App() {
         </Route>
         <Route path="/dashboard/posts/editar">
           <Dashboard>
-            <Form purpose="Editar" />
+            <FormEditarPostagens/>
           </Dashboard>
         </Route>
       </Switch>

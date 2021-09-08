@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Container } from "./style";
 
-export const Form = (props) => {
+export const FormEditarPostagens = () => {
 
     let [maxCharacterTitle, setMaxCharacterTitle] = useState("");
     let [maxCharacterDescription, setMaxCharacterDescription] = useState("");
@@ -35,7 +35,7 @@ export const Form = (props) => {
     return(
         <Container>
             <div id="title-form-cadastrar-div">
-                <h2>{props.purpose} Post</h2>
+                <h2>Editar Post</h2>
             </div>
             <form>
                 <div id="title-input-div">
@@ -53,7 +53,7 @@ export const Form = (props) => {
                 <div id="btn-cadastrar-div">
                     <button onClick={(e) => {
                         e.preventDefault();
-                    }}>{props.purpose}</button>
+                    }}>Editar</button>
                 </div>
             </form>            
         </Container>
