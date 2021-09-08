@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Container } from "./style";
 
+import { api } from "../../services/api";
+
 import { Card } from "../card/index";
 
 import { BtnDelete } from "../Btn_Delete";
@@ -9,6 +11,9 @@ import { BtnEdit } from "../Btn_Edit";
 
 export const PostsDashboard = () => {
 
+    api.get("/posts")
+        .then((response) => console.log(response.data))
+        .catch((err) => ("Infelizmente deu fail: "+err))
 
     return(
         <Container>
