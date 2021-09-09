@@ -13,7 +13,10 @@ export const FormEditarPostagens = () => {
     let [newCharacterContent, setNewCharacterContent] = useState(postData.content);
 
     const handleNewCharacterTitle = (e) => {
-        if(newCharacterTitle.length < 20){
+
+        const validationTitle = e.target.value <= 50
+
+        if(validationTitle){
             setNewCharacterTitle(newCharacterTitle = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para o titulo!")
@@ -21,7 +24,10 @@ export const FormEditarPostagens = () => {
     }
 
     const handleNewCharacterDescription = (e) => {
-        if(newCharacterDescription.length < 100){
+
+        const validationDescription = e.target.value <= 100
+
+        if(validationDescription){
             setNewCharacterDescription(newCharacterDescription = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para a descrição!")
@@ -29,7 +35,10 @@ export const FormEditarPostagens = () => {
     }
 
     const handleNewCharacterContent = (e) => {
-        if(newCharacterContent.length < 1000){
+
+        const validationContent = e.target.value <= 5000
+
+        if(validationContent){
             setNewCharacterContent(newCharacterContent = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para o contéudo do post!")
@@ -45,7 +54,7 @@ export const FormEditarPostagens = () => {
                 <form>
                     <div id="title-input-div">
                         <input onChange={handleNewCharacterTitle} value={newCharacterTitle} placeholder="Title" max="20"/>
-                        <span>{newCharacterTitle.length}/20</span>
+                        <span>{newCharacterTitle.length}/50</span>
                     </div>
                     <div id="description-textarea-div">
                         <textarea onChange={handleNewCharacterDescription} value={newCharacterDescription} placeholder="Description"/>
@@ -53,7 +62,7 @@ export const FormEditarPostagens = () => {
                     </div>
                     <div id="content-textarea-div">
                         <textarea onChange={handleNewCharacterContent} value={newCharacterContent} placeholder="Content" disable="true"/>
-                        <span>{newCharacterContent.length}/1000</span>
+                        <span>{newCharacterContent.length}/5000</span>
                     </div>
                     <div id="btn-cadastrar-div">
                         <button onClick={(e) => {
