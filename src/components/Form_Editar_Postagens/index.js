@@ -8,9 +8,9 @@ export const FormEditarPostagens = () => {
 
     const { postData, clearPostDatas } = useContext(MyContext)
 
-    let [newCharacterTitle, setNewCharacterTitle] = useState("");
-    let [newCharacterDescription, setNewCharacterDescription] = useState("");
-    let [newCharacterContent, setNewCharacterContent] = useState("");
+    let [newCharacterTitle, setNewCharacterTitle] = useState(postData.title);
+    let [newCharacterDescription, setNewCharacterDescription] = useState(postData.description);
+    let [newCharacterContent, setNewCharacterContent] = useState(postData.Content);
 
     const handleNewCharacterTitle = (e) => {
         if(newCharacterTitle.length < 20){
@@ -44,15 +44,15 @@ export const FormEditarPostagens = () => {
                 </div>
                 <form>
                     <div id="title-input-div">
-                        <input onChange={handleNewCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
+                        <input onChange={handleNewCharacterTitle} value={newCharacterTitle} placeholder="Title" max="20"/>
                         <span>{newCharacterTitle.length}/20</span>
                     </div>
                     <div id="description-textarea-div">
-                        <textarea onChange={handleNewCharacterDescription} value={postData.description} placeholder="Description"/>
+                        <textarea onChange={handleNewCharacterDescription} value={newCharacterDescription} placeholder="Description"/>
                         <span>{newCharacterDescription.length}/100</span>
                     </div>
                     <div id="content-textarea-div">
-                        <textarea onChange={handleNewCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
+                        <textarea onChange={handleNewCharacterContent} value={newCharacterContent} placeholder="Content" disable="true"/>
                         <span>{newCharacterContent.length}/1000</span>
                     </div>
                     <div id="btn-cadastrar-div">
