@@ -64,10 +64,11 @@ export const FormEditarPostagens = () => {
                         description: newCharacterContent,
                         content: newCharacterContent
                     })
-                        .then(res => {
+                        .then(async (res) => {
                             alert(res.data)
-                            clearPostDatas()
+                            window.location.href = await "http://localhost:3000/dashboard/posts"
                             clearNewCharacters()
+                            setTimeout(clearPostDatas, 1000)
                         })
                 }else{
                     return alert("Error! Content input is empyt!")
@@ -106,13 +107,13 @@ export const FormEditarPostagens = () => {
             </Container>
         )
     }else{
-        alert("Error: Nenhum Post foi selecionado para editar, volte a page de posts no seu dash board para selecionar um!")
-        return(
-            <Container>
+       
+    return(
+        <Container>
             <div id="title-form-cadastrar-div">
                 <h2>Vá na aba posts e selecione um para poder edita-lo.</h2>
             </div>          
         </Container>
-        )
+    )
     }
 }
