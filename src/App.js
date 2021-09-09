@@ -1,6 +1,9 @@
 //Import do react-router-dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+//Importando o contexto
+import { EditPostsContext } from "./context/EditPostsContext";
+
 //import do style global da aplicacao
 import { GlobalStyle } from "./style/GlobalStyle";
 
@@ -19,42 +22,44 @@ function App() {
   return (
     <Router>
       <GlobalStyle/>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/posts">
-          <Posts />
-        </Route>
-        <Route exact path="/dashboard">
-          <Dashboard>
-            <Status />
-          </Dashboard>
-        </Route>
-        <Route path="/dashboard/status">
-          <Dashboard>
-            <Status />
-          </Dashboard>
-        </Route>
-        <Route path="/dashboard/cadastrar">
-          <Dashboard>
-            <FormCadastrarPostagens/>
-          </Dashboard>
-        </Route>
-        <Route exact path="/dashboard/posts">
-          <Dashboard>
-            <PostsDashboard />
-          </Dashboard>
-        </Route>
-        <Route path="/dashboard/posts/editar">
-          <Dashboard>
-            <FormEditarPostagens/>
-          </Dashboard>
-        </Route>
-      </Switch>
+      <EditPostsContext>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard>
+              <Status />
+            </Dashboard>
+          </Route>
+          <Route path="/dashboard/status">
+            <Dashboard>
+              <Status />
+            </Dashboard>
+          </Route>
+          <Route path="/dashboard/cadastrar">
+            <Dashboard>
+              <FormCadastrarPostagens/>
+            </Dashboard>
+          </Route>
+          <Route exact path="/dashboard/posts">
+            <Dashboard>
+              <PostsDashboard />
+            </Dashboard>
+          </Route>
+          <Route path="/dashboard/posts/editar">
+            <Dashboard>
+              <FormEditarPostagens/>
+            </Dashboard>
+          </Route>
+        </Switch>
+      </EditPostsContext>
     </Router>
   );
 }

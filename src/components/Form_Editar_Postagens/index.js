@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { MyContext } from "../../context/EditPostsContext";
 
 import { Container } from "./style";
 
 export const FormEditarPostagens = () => {
+
+    const { postData, clearPostDatas } = useContext(MyContext)
 
     let [maxCharacterTitle, setMaxCharacterTitle] = useState("");
     let [maxCharacterDescription, setMaxCharacterDescription] = useState("");
@@ -39,15 +43,15 @@ export const FormEditarPostagens = () => {
             </div>
             <form>
                 <div id="title-input-div">
-                    <input onChange={handleMaxCharacterTitle} value={maxCharacterTitle} placeholder="Title" max="20"/>
+                    <input onChange={handleMaxCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
                     <span>{maxCharacterTitle.length}/20</span>
                 </div>
                 <div id="description-textarea-div">
-                    <textarea onChange={handleMaxCharacterDescription} placeholder="Description"/>
+                    <textarea onChange={handleMaxCharacterDescription} value={postData.description} placeholder="Description"/>
                     <span>{maxCharacterDescription.length}/100</span>
                 </div>
                 <div id="content-textarea-div">
-                    <textarea onChange={handleMaxCharacterContent} placeholder="Content" disable="true"/>
+                    <textarea onChange={handleMaxCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
                     <span>{maxCharacterContent.length}/1000</span>
                 </div>
                 <div id="btn-cadastrar-div">
