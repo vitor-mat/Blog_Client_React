@@ -1,49 +1,77 @@
 import React, { useState } from "react";
 
+import { api } from "../../services/api";
+
 import { Container } from "./style";
 
 export const FormCadastrarPostagens = () => {
 
-    let [maxCharacterTitle, setMaxCharacterTitle] = useState("");
-    let [maxCharacterDescription, setMaxCharacterDescription] = useState("");
-    let [maxCharacterContent, setMaxCharacterContent] = useState("");
+    let [charactersTitle, setCharactersTitle] = useState("");
+    let [charactersDescription, setCharactersDescription] = useState("");
+    let [charactersContent, setCharactersContent] = useState("");
 
-    const handleMaxCharacterTitle = (e) => {
+    const handlecharactersTitle = (e) => {
 
         const validationTitle = e.target.value.length <= 20
     
         if(validationTitle){
-            setMaxCharacterTitle(maxCharacterTitle = e.target.value)
+            setCharactersTitle(charactersTitle = e.target.value)
         }else{
-            e.target.value = maxCharacterTitle
+            e.target.value = charactersTitle
         }
     }
 
-    const handleMaxCharacterDescription = (e) => {
+    const handlecharactersDescription = (e) => {
 
         const validationDescription = e.target.value.length <= 100
 
         if(validationDescription){
-            setMaxCharacterDescription(maxCharacterDescription = e.target.value)
+            setCharactersDescription(charactersDescription = e.target.value)
         }else{
-            e.target.value = maxCharacterDescription
+            e.target.value = charactersDescription
         }
     }
 
-    const handleMaxCharacterContent = (e) => {
+    const handlecharactersContent = (e) => {
 
         const validationContent = e.target.value.length <= 1000
 
         if(validationContent){
-            setMaxCharacterContent(maxCharacterContent = e.target.value)
+            setCharactersContent(charactersContent = e.target.value)
         }else{
-            e.target.value = maxCharacterContent
+            e.target.value = charactersContent
         }
     }
 
 
-    const submitSubscription = () => {
-        alert("Ola mundo")
+    const submitSubscription = (e) => {
+        e.preventDefault();
+        
+        api.post("/add", {
+            title: charactersTitle,
+            description: charactersDescription,
+            content: charactersContent
+        })
+            .then( res => alert(res.data))
+            .catch(err => alert("Erro ao cadastrar: "+err))
+    }
+
+    const validationSubmition = (e) => {
+        e.preventDefault();
+
+        if(charactersTitle.length > 0){
+            if(charactersDescription.length > 0){
+                if(charactersContent.length > 0){
+                    submitSubscription(e)
+                }else{
+                    alert("Error! Content input is empyt!")
+                }
+            }else{
+                alert("Error! Description input is empyt!")
+            }
+        }else{
+            alert("Error! Title input is empyt!")
+        }
     }
 
     return(
@@ -53,21 +81,19 @@ export const FormCadastrarPostagens = () => {
             </div>
             <form>
                 <div id="title-input-div">
-                    <input onChange={handleMaxCharacterTitle} placeholder="Title" max="20"/>
-                    <span>{maxCharacterTitle.length}/20</span>
+                    <input onChange={handlecharactersTitle} placeholder="Title" max="20"/>
+                    <span>{charactersTitle.length}/20</span>
                 </div>
                 <div id="description-textarea-div">
-                    <textarea onChange={handleMaxCharacterDescription} placeholder="Description"/>
-                    <span>{maxCharacterDescription.length}/100</span>
+                    <textarea onChange={handlecharactersDescription} placeholder="Description"/>
+                    <span>{charactersDescription.length}/100</span>
                 </div>
                 <div id="content-textarea-div">
-                    <textarea onChange={handleMaxCharacterContent} placeholder="Content" disable="true"/>
-                    <span>{maxCharacterContent.length}/1000</span>
+                    <textarea onChange={handlecharactersContent} placeholder="Content" disable="true"/>
+                    <span>{charactersContent.length}/1000</span>
                 </div>
                 <div id="btn-cadastrar-div">
-                    <button onClick={(e) => {
-                        e.preventDefault();
-                    }}>Cadastrar</button>
+                    <button onClick={e => validationSubmition(e)}>Cadastrar</button>
                 </div>
             </form>            
         </Container>
