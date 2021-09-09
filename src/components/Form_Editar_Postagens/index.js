@@ -10,7 +10,7 @@ export const FormEditarPostagens = () => {
 
     let [newCharacterTitle, setNewCharacterTitle] = useState(postData.title);
     let [newCharacterDescription, setNewCharacterDescription] = useState(postData.description);
-    let [newCharacterContent, setNewCharacterContent] = useState(postData.Content);
+    let [newCharacterContent, setNewCharacterContent] = useState(postData.content);
 
     const handleNewCharacterTitle = (e) => {
         if(newCharacterTitle.length < 20){
