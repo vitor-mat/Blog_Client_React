@@ -91,7 +91,7 @@ export const FormCadastrarPostagens = () => {
             <form>
                 <div id="title-input-div">
                     <input onChange={handlecharactersTitle} value={charactersTitle} placeholder="Title" max="20"/>
-                    <span>{charactersTitle.length}/20</span>
+                    <span>{charactersTitle.length}/50</span>
                 </div>
                 <div id="description-textarea-div">
                     <textarea onChange={handlecharactersDescription} value={charactersDescription} placeholder="Description"/>
@@ -99,7 +99,7 @@ export const FormCadastrarPostagens = () => {
                 </div>
                 <div id="content-textarea-div">
                     <textarea onChange={handlecharactersContent} value={charactersContent} placeholder="Content" disable="true"/>
-                    <span>{charactersContent.length}/1000</span>
+                    <span>{charactersContent.length}/5000</span>
                 </div>
                 <div id="btn-cadastrar-div">
                     <button onClick={e => validationSubmition(e)}>Cadastrar</button>
