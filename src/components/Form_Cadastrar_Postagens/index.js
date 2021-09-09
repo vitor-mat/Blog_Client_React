@@ -12,7 +12,7 @@ export const FormCadastrarPostagens = () => {
 
     const handlecharactersTitle = (e) => {
 
-        const validationTitle = e.target.value.length <= 20
+        const validationTitle = e.target.value.length <= 50
     
         if(validationTitle){
             setCharactersTitle(charactersTitle = e.target.value)
@@ -34,7 +34,7 @@ export const FormCadastrarPostagens = () => {
 
     const handlecharactersContent = (e) => {
 
-        const validationContent = e.target.value.length <= 1000
+        const validationContent = e.target.value.length <= 5000
 
         if(validationContent){
             setCharactersContent(charactersContent = e.target.value)
