@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { Link } from 'react-router-dom';
+
+import { MyContext } from '../../context/EditPostsContext';
 
 import { api } from "../../services/api";
 
@@ -9,6 +11,8 @@ import { Container, Header, Main } from "./style";
 import { Card } from "../../components/card/index";
 
 export const Home = () => {
+
+    const { getPostDatas } = useContext(MyContext);
 
     let [myPosts, setMyPosts] = useState([])
 
@@ -26,7 +30,9 @@ export const Home = () => {
             </Header>
             <Main>
                 {myPosts.map(value => {
-                    return <Link className="cards-link-container" to={`/posts/${value.title.replace(/ /g, "-")}`}><Card key={value.id} title={value.title} description={value.description} content={value.content} /></Link>
+                    return <Link key={value.id} className="cards-link-container" onClick={() => {
+                        getPostDatas(value.id, value.title, value.description, value.content)
+                    }}to={`/posts/${value.title.replace(/ /g, "-")}`}><Card title={value.title} description={value.description} content={value.content} /></Link>
                 })}
             </Main>
         </Container>
