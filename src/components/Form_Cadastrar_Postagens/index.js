@@ -52,7 +52,10 @@ export const FormCadastrarPostagens = () => {
             description: charactersDescription,
             content: charactersContent
         })
-            .then( res => alert(res.data))
+            .then( res => {
+                alert(res.data)
+                restartSubscription()
+            })
             .catch(err => alert("Erro ao cadastrar: "+err))
     }
 
@@ -72,6 +75,12 @@ export const FormCadastrarPostagens = () => {
         }else{
             alert("Error! Title input is empyt!")
         }
+    }
+
+    const restartSubscription = () => {
+        setCharactersTitle(charactersTitle = "")
+        setCharactersDescription(charactersDescription = "")
+        setCharactersContent(charactersContent = "")
     }
 
     return(
