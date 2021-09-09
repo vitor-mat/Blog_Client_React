@@ -90,15 +90,15 @@ export const FormCadastrarPostagens = () => {
             </div>
             <form>
                 <div id="title-input-div">
-                    <input onChange={handlecharactersTitle} placeholder="Title" max="20"/>
+                    <input onChange={handlecharactersTitle} value={charactersTitle} placeholder="Title" max="20"/>
                     <span>{charactersTitle.length}/20</span>
                 </div>
                 <div id="description-textarea-div">
-                    <textarea onChange={handlecharactersDescription} placeholder="Description"/>
+                    <textarea onChange={handlecharactersDescription} value={charactersDescription} placeholder="Description"/>
                     <span>{charactersDescription.length}/100</span>
                 </div>
                 <div id="content-textarea-div">
-                    <textarea onChange={handlecharactersContent} placeholder="Content" disable="true"/>
+                    <textarea onChange={handlecharactersContent} value={charactersContent} placeholder="Content" disable="true"/>
                     <span>{charactersContent.length}/1000</span>
                 </div>
                 <div id="btn-cadastrar-div">
