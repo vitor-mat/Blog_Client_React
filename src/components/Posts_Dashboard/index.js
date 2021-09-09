@@ -22,7 +22,7 @@ export const PostsDashboard = () => {
 
             {
                 posts.map((value) => {
-                    return <Card key={value.description} edit={<BtnEdit />} delete={<BtnDelete />} title={value.title} description={value.description} content={value.content}/>
+                    return <Card key={value.id} edit={<BtnEdit />} delete={<BtnDelete />} title={value.title} description={value.description} content={value.content}/>
                 })
             }
 
