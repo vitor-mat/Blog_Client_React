@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 
+import { api } from "../../services/api";
+
 import { MyContext } from "../../context/EditPostsContext";
 
 import { Container } from "./style";
@@ -45,6 +47,24 @@ export const FormEditarPostagens = () => {
         }
     }
 
+    const submitEdit = (e) => {
+        e.preventDefault();
+
+        if(newCharacterTitle.length > 0){
+            if(newCharacterDescription.length > 0){
+                if(newCharacterContent.length > 0){
+                    return alert("Agora ss")
+                }else{
+                    return alert("Error! Content input is empyt!")
+                }
+            }else{
+                return alert("Error! Description input is empyt!")
+            }
+        }else{
+            return alert("Error! Title input is empyt!")
+        }
+    }
+
     if(postData.id){
         return(
             <Container>
@@ -65,9 +85,7 @@ export const FormEditarPostagens = () => {
                         <span>{newCharacterContent.length}/5000</span>
                     </div>
                     <div id="btn-cadastrar-div">
-                        <button onClick={(e) => {
-                            e.preventDefault();
-                        }}>Editar</button>
+                        <button onClick={submitEdit}>Editar</button>
                     </div>
                 </form>            
             </Container>
