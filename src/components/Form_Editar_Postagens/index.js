@@ -36,30 +36,41 @@ export const FormEditarPostagens = () => {
         }
     }
 
-    return(
-        <Container>
+    if(postData.id){
+        return(
+            <Container>
+                <div id="title-form-cadastrar-div">
+                    <h2>Editar Post</h2>
+                </div>
+                <form>
+                    <div id="title-input-div">
+                        <input onChange={handleNewCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
+                        <span>{newCharacterTitle.length}/20</span>
+                    </div>
+                    <div id="description-textarea-div">
+                        <textarea onChange={handleNewCharacterDescription} value={postData.description} placeholder="Description"/>
+                        <span>{newCharacterDescription.length}/100</span>
+                    </div>
+                    <div id="content-textarea-div">
+                        <textarea onChange={handleNewCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
+                        <span>{newCharacterContent.length}/1000</span>
+                    </div>
+                    <div id="btn-cadastrar-div">
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                        }}>Editar</button>
+                    </div>
+                </form>            
+            </Container>
+        )
+    }else{
+        alert("Error: Nenhum Post foi selecionado para editar, volte a page de posts no seu dash board para selecionar um!")
+        return(
+            <Container>
             <div id="title-form-cadastrar-div">
-                <h2>Editar Post</h2>
-            </div>
-            <form>
-                <div id="title-input-div">
-                    <input onChange={handleNewCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
-                    <span>{newCharacterTitle.length}/20</span>
-                </div>
-                <div id="description-textarea-div">
-                    <textarea onChange={handleNewCharacterDescription} value={postData.description} placeholder="Description"/>
-                    <span>{newCharacterDescription.length}/100</span>
-                </div>
-                <div id="content-textarea-div">
-                    <textarea onChange={handleNewCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
-                    <span>{newCharacterContent.length}/1000</span>
-                </div>
-                <div id="btn-cadastrar-div">
-                    <button onClick={(e) => {
-                        e.preventDefault();
-                    }}>Editar</button>
-                </div>
-            </form>            
+                <h2>Vá na aba posts e selecione um para poder edita-lo.</h2>
+            </div>          
         </Container>
-    )
+        )
+    }
 }
