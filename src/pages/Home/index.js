@@ -26,7 +26,7 @@ export const Home = () => {
             </Header>
             <Main>
                 {myPosts.map(value => {
-                    return <Card key={value.id} title={value.title} description={value.description} content={value.content} />
+                    return <Link className="cards-link-container" to={`/posts/${value.id}`}><Card key={value.id} title={value.title} description={value.description} content={value.content} /></Link>
                 })}
             </Main>
         </Container>

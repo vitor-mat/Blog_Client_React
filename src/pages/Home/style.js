@@ -71,9 +71,18 @@ export const Main = styled.main`
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     gap: 10px;
     padding: 20px 10px 10px 20px;
 
     overflow-y: auto;
+
+    .cards-link-container{
+        color: black;
+        text-decoration: none;
+    }
+
+    .cards-link-container:hover{
+        color: lightblue;
+    }
 `
