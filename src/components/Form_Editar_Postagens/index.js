@@ -8,29 +8,29 @@ export const FormEditarPostagens = () => {
 
     const { postData, clearPostDatas } = useContext(MyContext)
 
-    let [maxCharacterTitle, setMaxCharacterTitle] = useState("");
-    let [maxCharacterDescription, setMaxCharacterDescription] = useState("");
-    let [maxCharacterContent, setMaxCharacterContent] = useState("");
+    let [newCharacterTitle, setNewCharacterTitle] = useState("");
+    let [newCharacterDescription, setNewCharacterDescription] = useState("");
+    let [newCharacterContent, setNewCharacterContent] = useState("");
 
-    const handleMaxCharacterTitle = (e) => {
-        if(maxCharacterTitle.length < 20){
-            setMaxCharacterTitle(maxCharacterTitle = e.target.value)
+    const handleNewCharacterTitle = (e) => {
+        if(newCharacterTitle.length < 20){
+            setNewCharacterTitle(newCharacterTitle = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para o titulo!")
         }
     }
 
-    const handleMaxCharacterDescription = (e) => {
-        if(maxCharacterDescription.length < 100){
-            setMaxCharacterDescription(maxCharacterDescription = e.target.value)
+    const handleNewCharacterDescription = (e) => {
+        if(newCharacterDescription.length < 100){
+            setNewCharacterDescription(newCharacterDescription = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para a descrição!")
         }
     }
 
-    const handleMaxCharacterContent = (e) => {
-        if(maxCharacterContent.length < 1000){
-            setMaxCharacterContent(maxCharacterContent = e.target.value)
+    const handleNewCharacterContent = (e) => {
+        if(newCharacterContent.length < 1000){
+            setNewCharacterContent(newCharacterContent = e.target.value)
         }else{
             alert("Atingiu o limite de caracteres para o contéudo do post!")
         }
@@ -43,16 +43,16 @@ export const FormEditarPostagens = () => {
             </div>
             <form>
                 <div id="title-input-div">
-                    <input onChange={handleMaxCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
-                    <span>{maxCharacterTitle.length}/20</span>
+                    <input onChange={handleNewCharacterTitle} value={postData.title} placeholder="Title" max="20"/>
+                    <span>{newCharacterTitle.length}/20</span>
                 </div>
                 <div id="description-textarea-div">
-                    <textarea onChange={handleMaxCharacterDescription} value={postData.description} placeholder="Description"/>
-                    <span>{maxCharacterDescription.length}/100</span>
+                    <textarea onChange={handleNewCharacterDescription} value={postData.description} placeholder="Description"/>
+                    <span>{newCharacterDescription.length}/100</span>
                 </div>
                 <div id="content-textarea-div">
-                    <textarea onChange={handleMaxCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
-                    <span>{maxCharacterContent.length}/1000</span>
+                    <textarea onChange={handleNewCharacterContent} value={postData.content} placeholder="Content" disable="true"/>
+                    <span>{newCharacterContent.length}/1000</span>
                 </div>
                 <div id="btn-cadastrar-div">
                     <button onClick={(e) => {
