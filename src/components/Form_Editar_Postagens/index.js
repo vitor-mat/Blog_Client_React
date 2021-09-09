@@ -14,7 +14,7 @@ export const FormEditarPostagens = () => {
 
     const handleNewCharacterTitle = (e) => {
 
-        const validationTitle = e.target.value <= 50
+        const validationTitle = e.target.value.length <= 50
 
         if(validationTitle){
             setNewCharacterTitle(newCharacterTitle = e.target.value)
@@ -25,7 +25,7 @@ export const FormEditarPostagens = () => {
 
     const handleNewCharacterDescription = (e) => {
 
-        const validationDescription = e.target.value <= 100
+        const validationDescription = e.target.value.length <= 100
 
         if(validationDescription){
             setNewCharacterDescription(newCharacterDescription = e.target.value)
@@ -36,7 +36,7 @@ export const FormEditarPostagens = () => {
 
     const handleNewCharacterContent = (e) => {
 
-        const validationContent = e.target.value <= 5000
+        const validationContent = e.target.value.length <= 5000
 
         if(validationContent){
             setNewCharacterContent(newCharacterContent = e.target.value)
