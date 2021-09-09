@@ -47,13 +47,28 @@ export const FormEditarPostagens = () => {
         }
     }
 
+    const clearNewCharacters = () => {
+        setNewCharacterTitle(newCharacterTitle = "");
+        setNewCharacterDescription(newCharacterDescription = "");
+        setNewCharacterContent(newCharacterContent = "");
+    }
+
     const submitEdit = (e) => {
         e.preventDefault();
 
         if(newCharacterTitle.length > 0){
             if(newCharacterDescription.length > 0){
                 if(newCharacterContent.length > 0){
-                    return alert("Agora ss")
+                    api.put(`/edit/${postData.id}`,{
+                        title: newCharacterTitle,
+                        description: newCharacterContent,
+                        content: newCharacterContent
+                    })
+                        .then(res => {
+                            alert(res.data)
+                            clearPostDatas()
+                            clearNewCharacters()
+                        })
                 }else{
                     return alert("Error! Content input is empyt!")
                 }
