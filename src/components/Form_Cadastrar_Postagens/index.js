@@ -9,27 +9,41 @@ export const FormCadastrarPostagens = () => {
     let [maxCharacterContent, setMaxCharacterContent] = useState("");
 
     const handleMaxCharacterTitle = (e) => {
-        if(maxCharacterTitle.length < 20){
+
+        const validationTitle = e.target.value.length <= 20
+    
+        if(validationTitle){
             setMaxCharacterTitle(maxCharacterTitle = e.target.value)
         }else{
-            alert("Atingiu o limite de caracteres para o titulo!")
+            e.target.value = maxCharacterTitle
         }
     }
 
     const handleMaxCharacterDescription = (e) => {
-        if(maxCharacterDescription.length < 100){
+
+        const validationDescription = e.target.value.length <= 100
+
+        if(validationDescription){
             setMaxCharacterDescription(maxCharacterDescription = e.target.value)
         }else{
-            alert("Atingiu o limite de caracteres para a descrição!")
+            e.target.value = maxCharacterDescription
         }
     }
 
     const handleMaxCharacterContent = (e) => {
-        if(maxCharacterContent.length < 1000){
+
+        const validationContent = e.target.value.length <= 1000
+
+        if(validationContent){
             setMaxCharacterContent(maxCharacterContent = e.target.value)
         }else{
-            alert("Atingiu o limite de caracteres para o contéudo do post!")
+            e.target.value = maxCharacterContent
         }
+    }
+
+
+    const submitSubscription = () => {
+        alert("Ola mundo")
     }
 
     return(
@@ -39,7 +53,7 @@ export const FormCadastrarPostagens = () => {
             </div>
             <form>
                 <div id="title-input-div">
-                    <input onChange={handleMaxCharacterTitle} value={maxCharacterTitle} placeholder="Title" max="20"/>
+                    <input onChange={handleMaxCharacterTitle} placeholder="Title" max="20"/>
                     <span>{maxCharacterTitle.length}/20</span>
                 </div>
                 <div id="description-textarea-div">
