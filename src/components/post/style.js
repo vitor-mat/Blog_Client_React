@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
+    width: 40%;
+    min-height: 85vh;
 
     padding:15px;
 
@@ -10,22 +11,25 @@ export const Container = styled.div`
     gap: 10px;
     word-wrap: break-word;
 
-    text-align: center;
+    margin: 0 auto;
+
 
     h1{
-        font-size: 48px;
+        font-size: 64px;
         font-weight: 700;
+
+        margin-bottom: 10px: 
     }
 
     h3{
         font-size: 24px;
-        font-weight: 500;
         margin-bottom: 50px;
     }
 
     p{
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 300;
-        text-align: justify;
+
+        text-align: center;
     }
 `
