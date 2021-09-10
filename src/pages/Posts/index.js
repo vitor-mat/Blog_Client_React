@@ -15,9 +15,9 @@ export const Posts = () => {
 
     const { addNewAccess, addPostAccess } = useContext(AccessContext);
    
-    useEffect(async () => {
-        await addNewAccess();
-        await addPostAccess(postData.id)
+    useEffect(() => {
+        addNewAccess();
+        addPostAccess(postData.id, postData.acessos)
     },[])
 
         return(

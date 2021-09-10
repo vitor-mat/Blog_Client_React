@@ -18,17 +18,13 @@ export const CounterSiteAccessContext = ({ children }) => {
             .catch(async (err) => await alert("Error! Problema na contagem de acessos: "+err))
     }
 
-    const getCurrentlyAccess = () => {
+    const getCurrentlyAccess = async () => {
 
-        api.get("/all-access")
+        await api.get("/all-access")
         .then(async (res) => {
             await setMyAccess(myAccess = res.data)
 
-            if(myAccess.length > 0){
-                return console.log(myAccess[Number(myAccess.length) - 1].id)
-            }
-
-            return;
+            return console.log(myAccess)
         })
         .catch(err => console.log(err))
 
@@ -43,7 +39,7 @@ export const CounterSiteAccessContext = ({ children }) => {
     }
 
     return(
-        <AccessContext.Provider value={{getCurrentlyAccess, addNewAccess, addPostAccess}}>
+        <AccessContext.Provider value={{myAccess, getCurrentlyAccess, addNewAccess, addPostAccess}}>
             {children}
         </AccessContext.Provider>
     )

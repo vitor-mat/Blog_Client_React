@@ -1,8 +1,16 @@
 import React, { useContext, useEffect } from "react";
 
+import { AccessContext } from "../../context/CounterSiteAccessContext";
+
 import { Container } from "./style";
 
 export const Status = () => {
+
+    const { myAccess, getCurrentlyAccess } = useContext(AccessContext);
+
+    useEffect(() => {
+        getCurrentlyAccess()
+    }, [])
 
     return(
         <Container>
@@ -15,7 +23,7 @@ export const Status = () => {
                     </tr>
                     <tr>
                         <th>Nº acessos:</th>
-                        <th>0</th>
+                        <th>{myAccess.allAccessGeral[0].allAccess}</th>
                     </tr>
                     <tr>
                         <th>Posts mais acessados</th>
