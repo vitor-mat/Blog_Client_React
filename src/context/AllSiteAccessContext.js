@@ -21,10 +21,12 @@ export const AllSiteAccessContext = ({ children }) => {
             await setMyAccess(myAccess = res.data)
 
             if(myAccess.length > 0){
-                await startAccessCount()
+                return myAccess
             }
 
-            return myAccess
+            await startAccessCount()
+
+            return;
         })
         .catch(err => console.log(err))
 
