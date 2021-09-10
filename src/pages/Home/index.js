@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/EditPostsContext';
+import { AccessContext } from "../../context/AllSiteAccessContext";
 
 import { api } from "../../services/api";
 
@@ -13,6 +14,12 @@ import { Card } from "../../components/card/index";
 export const Home = () => {
 
     const { getPostDatas } = useContext(MyContext);
+
+    const { getCurrentlyAccess } = useContext(AccessContext);
+   
+    useEffect(() => {
+        getCurrentlyAccess()
+    },[])
 
     let [myPosts, setMyPosts] = useState([])
 
@@ -32,7 +39,7 @@ export const Home = () => {
                 {myPosts.map(value => {
                     return <Link key={value.id} className="cards-link-container" onClick={() => {
                         getPostDatas(value.id, value.title, value.description, value.content)
-                    }}to={`/posts/${value.title.replace(/ /g, "-")}`}><Card title={value.title} description={value.description} content={value.content} /></Link>
+                    }}to={`/posts/`}><Card title={value.title} description={value.description} content={value.content} /></Link>
                 })}
             </Main>
         </Container>

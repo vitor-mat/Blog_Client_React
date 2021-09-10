@@ -14,17 +14,17 @@ export const Posts = () => {
 
     const { postData } = useContext(MyContext)
 
-    return(
-        <Container>
-            <Header>
-            <Link to="/home"><h1>Blog App</h1></Link>
-                <div id="btn-dashboard-div">
-                    <button id="btn-dashboard"><Link to="/dashboard">Dashboard</Link></button>
-                </div>
-            </Header>
-            <Main>
-                <Post title={postData.title} description={postData.description} content={postData.content}/>
-            </Main>
-        </Container>
-    )
+        return(
+            <Container>
+                <Header>
+                <Link to="/home"><h1>Blog App</h1></Link>
+                    <div id="btn-dashboard-div">
+                        <button id="btn-dashboard"><Link to="/dashboard">Dashboard</Link></button>
+                    </div>
+                </Header>
+                <Main>
+                    <Post title={postData.title} description={postData.description} content={postData.content}/>
+                </Main>
+            </Container>
+        )
 }
