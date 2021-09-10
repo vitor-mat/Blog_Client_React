@@ -15,10 +15,10 @@ export const Home = () => {
 
     const { getPostDatas } = useContext(MyContext);
 
-    const { getCurrentlyAccess } = useContext(AccessContext);
+    const { addNewAccess } = useContext(AccessContext);
    
     useEffect(() => {
-        getCurrentlyAccess()
+        addNewAccess()
     },[])
 
     let [myPosts, setMyPosts] = useState([])

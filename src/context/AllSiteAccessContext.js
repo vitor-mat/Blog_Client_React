@@ -8,7 +8,7 @@ export const AllSiteAccessContext = ({ children }) => {
 
     let [myAccess, setMyAccess] = useState();
 
-    const startAccessCount = () => {
+    const addNewAccess = () => {
         api.post("/new-access")
             .then(async (res) => await alert("Parabéns! Você é a primeira pessoa a visita este blog!"))
             .catch(async (err) => await alert("Foi mau, não dá pra contar agora."))
@@ -24,7 +24,7 @@ export const AllSiteAccessContext = ({ children }) => {
                 return myAccess
             }
 
-            await startAccessCount()
+            await addNewAccess()
 
             return;
         })
@@ -33,7 +33,7 @@ export const AllSiteAccessContext = ({ children }) => {
     }
 
     return(
-        <AccessContext.Provider value={{getCurrentlyAccess}}>
+        <AccessContext.Provider value={{getCurrentlyAccess, addNewAccess}}>
             {children}
         </AccessContext.Provider>
     )
