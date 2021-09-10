@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/EditPostsContext';
-import { AccessContext } from "../../context/AllSiteAccessContext";
+import { AccessContext } from "../../context/CounterSiteAccessContext";
 
 import { api } from "../../services/api";
 
@@ -17,8 +17,8 @@ export const Home = () => {
 
     const { addNewAccess } = useContext(AccessContext);
    
-    useEffect(() => {
-        addNewAccess()
+    useEffect(async () => {
+        await addNewAccess()
     },[])
 
     let [myPosts, setMyPosts] = useState([])

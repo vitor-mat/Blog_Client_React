@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Importando o contexto
 import { EditPostsContext } from "./context/EditPostsContext";
-import { AllSiteAccessContext } from "./context/AllSiteAccessContext";
+import { CounterSiteAccessContext } from "./context/CounterSiteAccessContext";
 
 //import do style global da aplicacao
 import { GlobalStyle } from "./style/GlobalStyle";
@@ -18,14 +18,13 @@ import { FormCadastrarPostagens } from "./components/Form_Cadastrar_Postagens/in
 import { FormEditarPostagens } from "./components/Form_Editar_Postagens/index";
 import { PostsDashboard } from "./components/Posts_Dashboard/index";
 import { Status } from "./components/Status/index";
-import { useEffect } from "react";
 
 function App() {
 
   return (
     <Router>
       <GlobalStyle/>
-      <AllSiteAccessContext>
+      <CounterSiteAccessContext>
         <EditPostsContext>
           <Switch>
             <Route exact path="/">
@@ -64,7 +63,7 @@ function App() {
             </Route>
           </Switch>
         </EditPostsContext>
-      </AllSiteAccessContext>
+      </CounterSiteAccessContext>
     </Router>
   );
 }

@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/EditPostsContext';
-
-import { api } from "../../services/api";
+import { AccessContext } from '../../context/CounterSiteAccessContext';
 
 import { Container, Header, Main } from "./style";
 
@@ -13,6 +12,13 @@ import { Post } from "../../components/post/index";
 export const Posts = () => {
 
     const { postData } = useContext(MyContext)
+
+    const { addNewAccess, addPostAccess } = useContext(AccessContext);
+   
+    useEffect(async () => {
+        await addNewAccess();
+        await addPostAccess(postData.id)
+    },[])
 
         return(
             <Container>

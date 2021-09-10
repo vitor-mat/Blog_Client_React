@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 
 import { Container } from "./style";
 
 export const Status = () => {
+
     return(
         <Container>
             <table>
