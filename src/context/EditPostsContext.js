@@ -18,6 +18,8 @@ export const EditPostsContext = ({ children }) => {
             description,
             content
         })
+
+        console.log(postData)
     }
 
     const clearPostDatas = () => {

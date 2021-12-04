@@ -18,18 +18,6 @@ export const CounterSiteAccessContext = ({ children }) => {
             .catch(async (err) => await alert("Error! Problema na contagem de acessos: "+err))
     }
 
-    const getCurrentlyAccess = async () => {
-
-        await api.get("/all-access")
-        .then(async (res) => {
-            await setMyAccess(myAccess = res.data)
-
-            return console.log(myAccess)
-        })
-        .catch(err => console.log(err))
-
-    }
-
     const addPostAccess = async (id, access) => {
         await api.post(`/add-post-access/${id}`,{
             acessos: Number(access) + 1
@@ -39,7 +27,7 @@ export const CounterSiteAccessContext = ({ children }) => {
     }
 
     return(
-        <AccessContext.Provider value={{myAccess, getCurrentlyAccess, addNewAccess, addPostAccess}}>
+        <AccessContext.Provider value={{myAccess, addNewAccess, addPostAccess}}>
             {children}
         </AccessContext.Provider>
     )

@@ -32,7 +32,7 @@ export const Home = () => {
             <Header>
                 <Link to="/home"><h1>Blog App</h1></Link>
                 <div id="btn-dashboard-div">
-                    <button id="btn-dashboard"><Link to="/dashboard">Dashboard</Link></button>
+                    <button id="btn-dashboard"><Link to="/dashboard">Admin</Link></button>
                 </div>
             </Header>
             <Main>

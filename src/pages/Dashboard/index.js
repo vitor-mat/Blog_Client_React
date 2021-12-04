@@ -8,7 +8,7 @@ export const Dashboard = ({children}) => {
     return(
         <Container>
             <Header>
-                <Link to="/dashboard"><h1>Blog App <span>dashboard</span></h1></Link>
+                <Link to="/dashboard"><h1>Blog App <span>admin</span></h1></Link>
                 <div id="btn-dashboard-div">
                     <button id="btn-dashboard"><Link to="/">Get out</Link></button>
                 </div>

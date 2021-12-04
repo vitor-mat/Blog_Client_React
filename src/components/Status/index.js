@@ -1,16 +1,22 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-import { AccessContext } from "../../context/CounterSiteAccessContext";
+import { api } from "../../services/api";
 
 import { Container } from "./style";
 
 export const Status = () => {
 
-    const { myAccess, getCurrentlyAccess } = useContext(AccessContext);
+    //const { postData, getPostDatas } = useContext(MyContext);
 
-    useEffect(() => {
-        getCurrentlyAccess()
-    }, [])
+    let [siteAccess, setSiteAccess] = useState([]);
+
+
+    
+
+            api.get("/site-access")
+            .then(res => setSiteAccess(siteAccess = res.data))
+            .catch(err => console.log(err))
+
 
     return(
         <Container>
@@ -23,7 +29,7 @@ export const Status = () => {
                     </tr>
                     <tr>
                         <th>Nº acessos:</th>
-                        <th>{myAccess.allAccessGeral[0].allAccess}</th>
+                        {siteAccess.map(value => <th key={value.id}>{value.allAccess}</th>)}
                     </tr>
                     <tr>
                         <th>Posts mais acessados</th>
