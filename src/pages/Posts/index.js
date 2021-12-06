@@ -29,7 +29,7 @@ export const Posts = () => {
                     </div>
                 </Header>
                 <Main>
-                    <Post title={postData.title} description={postData.description} content={postData.content}/>
+                    <Post title={postData.title || "Nenhum Post foi selecionado"} description={postData.description || ""} content={postData.content || ""}/>
                 </Main>
             </Container>
         )
