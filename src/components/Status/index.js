@@ -10,19 +10,27 @@ export const Status = () => {
 
     let [siteAccess, setSiteAccess] = useState([]);
 
+    let [posts, setPosts] = useState([])
 
-    
-
-            api.get("/site-access")
+    useEffect(() => {
+        api.get("/site-access")
             .then(res => setSiteAccess(siteAccess = res.data))
             .catch(err => console.log(err))
+        
+        api.get("/posts")
+            .then(async (response) => {
+                await setPosts(posts = response.data)
+                console.log(posts)
+            })
+            .catch((err) => ("Infelizmente deu fail: "+err))
+    }, [])
 
 
     return(
         <Container>
             <h2>Status</h2>
             <div>
-                <span>Nº Posts: 0</span>
+                <span>Nº Posts: {posts.length}</span>
                 {siteAccess.map(value => <span key={value.id}>{`Nº acessos: ${value.allAccess}`}</span>)}
             </div>
         </Container>
