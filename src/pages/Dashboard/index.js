@@ -18,6 +18,8 @@ export const Dashboard = ({children}) => {
     let [burger2Active, setBurger2Active] = useState("")
     let [burger3Active, setBurger3Active] = useState("")
 
+    let [blackPainelOn, setBlackPainelOn] = useState("")
+
     const showMenuMobile = () => {
 
         if(!showAside){
@@ -27,18 +29,27 @@ export const Dashboard = ({children}) => {
             setBurger2Active(burger2Active = "burger-2-Active")
             setBurger3Active(burger3Active = "burger-3-Active")
 
+            setBlackPainelOn(blackPainelOn = "black-painel-on")
+
             return;
         }
 
         setShowAside(showAside = "")
+
         setBurger1Active(burger1Active = "")
         setBurger2Active(burger2Active = "")
         setBurger3Active(burger3Active = "")
+
+        setBlackPainelOn(blackPainelOn = "")
 
     }
 
     return(
         <Container>
+            <div
+            className={`black-painel-off ${blackPainelOn}`}
+            onClick={() => showMenuMobile()}
+            ></div>
             <HanburgerMenu
                 onClick={() => showMenuMobile()}
             >
@@ -55,9 +66,9 @@ export const Dashboard = ({children}) => {
             <Aside className={showAside}>
                 <nav>
                     <ul>
-                        <li><Link to="/dashboard/status">Status</Link></li>
-                        <li><Link to="/dashboard/cadastrar">Cadastrar</Link></li>
-                        <li><Link to="/dashboard/posts">Meus Posts</Link></li>
+                        <li onClick={() => showMenuMobile()}><Link to="/dashboard/status">Status</Link></li>
+                        <li onClick={() => showMenuMobile()}><Link to="/dashboard/cadastrar">Cadastrar</Link></li>
+                        <li onClick={() => showMenuMobile()}><Link to="/dashboard/posts">Meus Posts</Link></li>
                     </ul>
                 </nav>
             </Aside>

@@ -12,6 +12,20 @@ export const Container = styled.div`
     grid-template-columns: 180px  auto;
     grid-template-rows: 10vh  90vh;
 
+    .black-painel-off{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background: white;
+        opacity: .7;
+        transform: translatey(-100vh);
+        transition: .1s linear;
+    }
+
+     .black-painel-on{
+        transform: translatey(0vh);
+     }
+
     @media(max-width:550px){
         grid-template-areas:"header header"
                             "main main";
