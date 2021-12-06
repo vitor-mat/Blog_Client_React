@@ -7,9 +7,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 
-    padding-top: 30px;
+    padding-top: 70px;
 
     #title-form-cadastrar-div{
         width: 100%;
@@ -38,9 +38,9 @@ export const Container = styled.div`
 
             input{
                 width: 100%;
-                height: 50px;
+                height: 70px;
     
-                padding: 5px;
+                padding: 5px 5px 25px;
     
                 font-size: 24px;
                 font-weight: 300;
@@ -58,7 +58,7 @@ export const Container = styled.div`
                 position: absolute;
 
                 right: 30px;
-                bottom: 4px;
+                bottom: 10px;
 
                 font-weight: 300;
             }
@@ -71,9 +71,9 @@ export const Container = styled.div`
 
             textarea{
                 width: 100%;
-                height: 70px;
+                min-height: 70px;
     
-                padding: 5px;
+                padding: 5px 5px 25px;
     
                 font-size: 24px;
                 font-weight: 300;
@@ -94,7 +94,7 @@ export const Container = styled.div`
                 position: absolute;
 
                 right: 30px;
-                bottom: 8px;
+                bottom: 10px;
 
                 font-weight: 300;
             }

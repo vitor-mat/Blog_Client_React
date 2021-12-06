@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from "./style";
 
@@ -13,9 +13,13 @@ export const PostsDashboard = () => {
 
     let [posts, setPosts] = useState([])
 
-    api.get("/posts")
-        .then((response) => setPosts(posts = response.data))
+    useEffect(() => {
+        api.get("/posts")
+        .then(async (response) => {
+            await setPosts(posts = response.data)
+        })
         .catch((err) => ("Infelizmente deu fail: "+err))
+    }, [])
 
     return(
         <Container>

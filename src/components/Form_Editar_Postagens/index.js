@@ -82,6 +82,7 @@ export const FormEditarPostagens = () => {
     }
 
     if(postData.id){
+        console.log(postData)
         return(
             <Container>
                 <div id="title-form-cadastrar-div">
@@ -98,7 +99,7 @@ export const FormEditarPostagens = () => {
                     </div>
                     <div id="content-textarea-div">
                         <textarea onChange={handleNewCharacterContent} value={newCharacterContent} placeholder="Content" disable="true"/>
-                        <span>{newCharacterContent.length}/5000</span>
+                        {/*<span>{newCharacterContent.length}/5000</span> */}
                     </div>
                     <div id="btn-cadastrar-div">
                         <button onClick={submitEdit}>Editar</button>

@@ -10,16 +10,13 @@ export const EditPostsContext = ({ children }) => {
         content: ""
     })
 
-    const getPostDatas = (id, acessos, title, description, content) => {
+    const getPostDatas = (id, title, description, content) => {
         setPost({
             id,
-            acessos,
             title,
             description,
             content
         })
-
-        console.log(postData)
     }
 
     const clearPostDatas = () => {

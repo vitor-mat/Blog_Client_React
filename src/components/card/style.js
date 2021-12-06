@@ -33,6 +33,10 @@ export const Container = styled.div`
         width: 100%;
         height: 60px;
 
-        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 10px;
+        gap: 15px;
+        align-items: center;
     }
 `
