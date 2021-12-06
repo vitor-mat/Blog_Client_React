@@ -13,24 +13,29 @@ export const Container = styled.div`
     grid-template-rows: 10vh  90vh;
 
     .black-painel-off{
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        background: white;
-        opacity: .7;
-        transform: translatey(-100vh);
-        transition: .1s linear;
+        display: none;
     }
 
-     .black-painel-on{
-        transform: translatey(0vh);
-     }
-
-    @media(max-width:550px){
+    @media(max-width:570px){
         grid-template-areas:"header header"
                             "main main";
         grid-template-columns: 100%;
         grid-template-rows: 10vh  90vh;
+
+        .black-painel-off{
+            display: block;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background: white;
+            opacity: .7;
+            transform: translatey(-100vh);
+            transition: .1s linear;
+        }
+    
+         .black-painel-on{
+            transform: translatey(0vh);
+         }
 
          .showAside{
             transform: translatex(0px);
@@ -44,7 +49,7 @@ export const Container = styled.div`
 export const HanburgerMenu = styled.div`
     display: none;
 
-    @media(max-width: 550px){
+    @media(max-width: 570px){
         display: flex;
         flex-direction: column;
         gap: 7px;
@@ -207,7 +212,7 @@ export const Aside = styled.aside`
         }
     }
 
-    @media(max-width: 550px){
+    @media(max-width: 570px){
         width: 180px;
         grid-area: none;
         position: absolute;

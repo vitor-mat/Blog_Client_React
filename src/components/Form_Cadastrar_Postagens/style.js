@@ -7,12 +7,13 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 
     padding-top: 70px;
 
     #title-form-cadastrar-div{
         width: 100%;
+        height: 180px;
 
         text-align: center;
 
@@ -28,7 +29,7 @@ export const Container = styled.div`
 
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
 
 
         #title-input-div{
