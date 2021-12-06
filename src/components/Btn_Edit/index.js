@@ -9,7 +9,6 @@ import { MyContext } from "../../context/EditPostsContext";
 export const BtnEdit = (props) => {
     const { getPostDatas } = useContext(MyContext)
 
-
     return(
         <Link to="/dashboard/posts/editar">
             <Button onClick={() => {

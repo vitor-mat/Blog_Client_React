@@ -4,11 +4,6 @@ export const Container = styled.div`
     width: 100%;
 
     padding-top: 70px;
-    
-    display: flex;
-    flex-direction: column;
-
-    gap: 40px;
 
     overflow-y: auto;
 
