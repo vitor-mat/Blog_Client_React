@@ -3,43 +3,28 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
 
-    padding: 10px 0;
+    padding-top: 70px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
 
-    table{
-        height: 300px;
-
-        caption{
-            width: 100%;
-            height: 50px;
-
-            border: 1px solid black;
-
-            text-align: center;
-            line-height: 50px;
-        }
-
-        tr > th {
-            width: 50%;
-            height: 33.33%;
-
-            padding: 10px;
-        }
-    }
-
-    table, div{
-        width: 400px;
-
-        text-align: center;
-
-        border: 1px solid black;
+    h2{
+        font-size: 64px;
+        font-weight: 400;
     }
 
     div{
-        dislay: inline-block;
-        height: 350px;
+        width: 100%;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span{
+            font-size: 24px;
+        }
     }
+
 `

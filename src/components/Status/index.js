@@ -20,38 +20,10 @@ export const Status = () => {
 
     return(
         <Container>
-            <table>
-                 <caption>Status</caption>
-                <tbody>
-                    <tr>
-                        <th>Nº Posts:</th>
-                        <th>0</th>
-                    </tr>
-                    <tr>
-                        <th>Nº acessos:</th>
-                        {siteAccess.map(value => <th key={value.id}>{value.allAccess}</th>)}
-                    </tr>
-                    <tr>
-                        <th>Posts mais acessados</th>
-                        <th>
-                            <ul>
-                                <li>Post 1</li>
-                                <li>Post 2</li>
-                                <li>Post 3</li>
-                            </ul>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>Status</h2>
             <div>
-                <h3>Posts por mês</h3>
-                <br/>
-                <span>grafico</span>
-            </div>
-            <div>
-                <h3>Acessos por mês</h3>
-                <br/>
-                <span>grafico</span>
+                <span>Nº Posts: 0</span>
+                {siteAccess.map(value => <span key={value.id}>{`Nº acessos: ${value.allAccess}`}</span>)}
             </div>
         </Container>
     )

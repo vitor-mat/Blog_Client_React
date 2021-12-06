@@ -10,7 +10,60 @@ export const Container = styled.div`
     grid-template-areas:"header header"
                         "aside main";
     grid-template-columns: 180px  auto;
-    grid-template-rows: 10vh  90vh; 
+    grid-template-rows: 10vh  90vh;
+
+    @media(max-width:550px){
+        grid-template-areas:"header header"
+                            "main main";
+        grid-template-columns: 100%;
+        grid-template-rows: 10vh  90vh;
+
+         .showAside{
+            transform: translatex(0px);
+            z-index: 500;
+            opacity: 1;
+            background: white;
+        }
+    } 
+`
+
+export const HanburgerMenu = styled.div`
+    display: none;
+
+    @media(max-width: 550px){
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        width: 80px;
+        height: 60px;
+        position: absolute;
+        top: 100px;
+        left: 40px;
+        z-index: 1000;
+        padding: 10px;
+
+        .burger{
+            width: 100%;
+            min-height: 8px;
+            background: black;
+            border-radius: 10px;
+            opacity: .7;
+            transition: .4s linear;
+        }
+
+        .burger-1-Active{
+            transform: rotatez(45deg) translatey(20px);
+        }
+
+        .burger-2-Active{
+            transform: translatey(-10px);
+            opacity: 0;
+        }
+
+        .burger-3-Active{
+            transform: rotatez(-45deg) translatey(-20px);
+        }
+    }
 `
 
 export const Header = styled.header`
@@ -96,7 +149,9 @@ export const Aside = styled.aside`
 
     background: rgba(0, 0, 0, 0.1);
 
-    padding-top: 70px;
+    padding-top: 90px;
+
+    transition: .4s linear;
 
     ul{
 
@@ -136,5 +191,13 @@ export const Aside = styled.aside`
                 color: lightblue;
             }
         }
+    }
+
+    @media(max-width: 550px){
+        width: 180px;
+        grid-area: none;
+        position: absolute;
+        top: 80px;
+        transform: translatex(-180px);
     }
 `

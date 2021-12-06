@@ -9,7 +9,7 @@ export const Container = styled.div`
     align-items: center;
     gap: 50px;
 
-    padding-top: 30px;
+    padding-top: 70px;
 
     #title-form-cadastrar-div{
         width: 100%;
