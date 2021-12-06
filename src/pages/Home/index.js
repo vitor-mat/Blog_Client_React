@@ -19,13 +19,14 @@ export const Home = () => {
    
     useEffect(() => {
        addNewAccess()
+
+       api.get("/posts")
+       .then(res => setMyPosts(myPosts = res.data))
+       .catch(err => alert("Error! Erro ao se conectar com o banco de dados: "+err))
+
     },[])
 
     let [myPosts, setMyPosts] = useState([])
-
-    api.get("/posts")
-        .then(res => setMyPosts(myPosts = res.data))
-        .catch(err => alert("Error! Erro ao se conectar com o banco de dados: "+err))
 
     return(
         <Container>

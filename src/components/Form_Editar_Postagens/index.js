@@ -82,7 +82,6 @@ export const FormEditarPostagens = () => {
     }
 
     if(postData.id){
-        console.log(postData)
         return(
             <Container>
                 <div id="title-form-cadastrar-div">
