@@ -39,7 +39,7 @@ export const Home = () => {
             <Main>
                 {myPosts.map(value => {
                     return <Link key={value.id} className="cards-link-container" onClick={() => {
-                        getPostDatas(value.id, value.acessos, value.title, value.description, value.content)
+                        getPostDatas(value.id, value.title, value.description, value.content)
                     }}to={`/posts/`}><Card title={value.title} description={value.description} content={value.content} /></Link>
                 })}
             </Main>
