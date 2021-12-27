@@ -1,8 +1,7 @@
 # Blog App
 Uma aplicação simples de um blog, com um painel administrativo que gera, edita e exclui os postos através de uma api também criada para este projeto em node js.
 
-![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Styled-Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
-![React_Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Styled-Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![React_Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Axios](https://img.shields.io/badge/-Axios-purple)
 ## SUMÁRIO
 
 - Status
@@ -70,7 +69,8 @@ Pelo promt de comando entre na pasta do projeto, em seguida rode o comando npm i
 
 - [React_Js](https://pt-br.reactjs.org/docs/getting-started.html)
 - [React_Router](https://github.com/atlassian/react-beautiful-dndhttps://v5.reactrouter.com/web/guides/quick-start)
-- [styled-components](https://styled-components.com/docs)
+- [Styled-Components](https://styled-components.com/docs)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
 
 ## Autor
 
